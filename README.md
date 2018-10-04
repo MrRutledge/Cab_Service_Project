@@ -1,6 +1,8 @@
 # Cab_Service_Project
 Cab Service University design project
 
+![Graph](C:/Users/Shaki/Documents/GitHub/CabOnDemand/Cab_Service_Project/img/graph.JPG)
+
 __The Report CabsOnDemand.__
 
 The task was to design a database for a cab company, I researched the project and manged to normalise it to the third form, I designed the E-R diagram and I had to create and display the queries.
@@ -40,8 +42,9 @@ Job(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble
 Office(OfficeID, MobileNos, Email, AddressID*, Telephone, Managerid)
  Staff(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
 Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)
-TaxiOwner(OwnerID, FirstName, SecName, tReg*)
-2NF
+TaxiOwner(OwnerID, FirstName, SecName, tReg*)\
+
+**2NF**
 Location(Borough, houseNumber, StreetName, Postcode,)
 Client(ClientID, FirstName SecName, phoneNo))
 ClientType(Private,(clientid,charge)Business(clinteid,Businestype,email))
@@ -54,7 +57,8 @@ Staff(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
 Taxi(tReg, Capacity, CurrentMileage, DueDate, driverID*)
 Car (tReg, Model, Make, Colour, ownerID*) 
 TaxiOwner(OwnerID, FirstName, SecName, tReg*)
-3NF
+
+**3NF**
 Location(Borough, houseNumber, StreetName, Postcode,)
 Client(ClientID, FirstName SecName, phoneNo))
 ClientType(clientID,Private,(clientid,charge)Business(clinteid,Businestype,email))
