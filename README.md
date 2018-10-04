@@ -21,7 +21,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 
 **Conceptual relations.**\
 
-##Cabs On Demand.
+#### Cabs On Demand.
 
 **Address**(Borough, houseNumber, StreetName, Postcode,)\
 **Office**(OfficeID, MobileNos, Email, AddressID*, Telephone, Manager)\
@@ -45,7 +45,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 **Driver**(DriverID, FirstName, SecName, Gender, licenceNO)
 **Job**(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed)
 **Office**(OfficeID, MobileNos, Email, AddressID*, Telephone, Managerid)
- **Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
+**Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
 **Taxi**(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)
 **TaxiOwner**(OwnerID, FirstName, SecName, tReg*)\
 
