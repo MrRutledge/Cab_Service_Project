@@ -1,11 +1,11 @@
 # Cab_Service_Project
 Cab Service University design project
 
-![Graph](/Cab_Service_Project/img/graph.JPG)
+![Graph](Cab_Service_Project/img/graph.JPG) 
 
 __The Report CabsOnDemand.__
 
-The task was to design a database for a cab company, I researched the project and manged to normalise it to the third form, I designed the E-R diagram and I had to create and display the queries.
+The task was to design a database for a cab company, I researched the project and managed to normalise it to the third form, I designed the E-R diagram and I had to create and display the queries.
 This course work will help me with my next coursework in my other module of data structures and software programming where I have to develop a web app and will need to connect and design a database.
 In this course I use the SQL Developer GUI, it was a new software because in the past I have tried MySQL, however I manged to get used to it and used it in my project in the end it was a lot easier to export my SQL tables using SQL developer. The research I did for this course work helped me learn and discover new technologies and websites that will help me prosper in my studies.
 
