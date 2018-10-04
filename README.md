@@ -31,7 +31,7 @@ CabsOnDemand.
 **Client**(ClientID, ClientType(Private,(charge)Business(Businestype,email)), FirstName SecName, phoneNo))\
 **Taxi**(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)\
 
-**UnNormalized**\
+**UnNormalized** \
 
 **CabsOnDemand**(Location(Borough, houseNumber, StreetName, Postcode,), **Office**( OfficeID, MobileNos, Email, Location, Telephone, Manager), Staff(StaffNumber, FirstName, SecName, NI, Address, D.O.B, Salary, Gender), Taxi Owner( OwnerID, FirstName, SecName, tReg), Driver(DriverID, FirstName, SecName, Gender), Contract(ContractID, DateSigned, DateDue, fixedCharge, NoofJobs),Job(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed), Client(ClientID, ClientType(Private,(charge)Business(Businestype,email address)), FirstName SecName Address, Contactdetaisl(MobileNo))Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate))
 Location(Borough, houseNumber, StreetName, Postcode,)
@@ -44,7 +44,7 @@ Office(OfficeID, MobileNos, Email, AddressID*, Telephone, Managerid)
 Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)
 TaxiOwner(OwnerID, FirstName, SecName, tReg*)\
 
-**2NF**
+**2NF**\
 Location(Borough, houseNumber, StreetName, Postcode,)
 Client(ClientID, FirstName SecName, phoneNo))
 ClientType(Private,(clientid,charge)Business(clinteid,Businestype,email))
@@ -58,7 +58,7 @@ Taxi(tReg, Capacity, CurrentMileage, DueDate, driverID*)
 Car (tReg, Model, Make, Colour, ownerID*) 
 TaxiOwner(OwnerID, FirstName, SecName, tReg*)
 
-**3NF**
+**3NF**\
 Location(Borough, houseNumber, StreetName, Postcode,)
 Client(ClientID, FirstName SecName, phoneNo))
 ClientType(clientID,Private,(clientid,charge)Business(clinteid,Businestype,email))
