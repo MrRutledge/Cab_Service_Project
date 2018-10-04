@@ -1,7 +1,7 @@
 # Cab_Service_Project
 Cab Service University design project
 
-![Graph](C:/Users/Shaki/Documents/GitHub/CabOnDemand/Cab_Service_Project/img/graph.JPG)
+![Graph](/Cab_Service_Project/img/graph.JPG)
 
 __The Report CabsOnDemand.__
 
@@ -76,7 +76,7 @@ TaxiOwner(OwnerID, FirstName, SecName, tReg*)
 
 ## Image 
 
-![Graph](C:/Users/Shaki/Documents/GitHub/CabOnDemand/Cab_Service_Project/img/Display_1.png)
+![Graph](/Cab_Service_Project/img/Display_1.png)
 
 **Examples of Queries** 
 
