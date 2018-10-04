@@ -6,6 +6,7 @@ __The Report CabsOnDemand.__
 The task was to design a database for a cab company, I researched the project and manged to normalise it to the third form, I designed the E-R diagram and I had to create and display the queries.
 This course work will help me with my next coursework in my other module of data structures and software programming where I have to develop a web app and will need to connect and design a database.
 In this course I use the SQL Developer GUI, it was a new software because in the past I have tried MySQL, however I manged to get used to it and used it in my project in the end it was a lot easier to export my SQL tables using SQL developer. The research I did for this course work helped me learn and discover new technologies and websites that will help me prosper in my studies.
+
 **Assumptions**
 
 * They may have more than one office in the same borough
@@ -14,7 +15,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 * Drivers are self employed 
 * Managers are part of staff
 * No two offices in the same building
-* 
+
 
 **Conceptual relations.**
 CabsOnDemand.
@@ -71,7 +72,7 @@ TaxiOwner(OwnerID, FirstName, SecName, tReg*)
 
 ## Image 
 
-![Kittens](/GitHub/CabOnDemand/Cab_Service_Project/Display_1.png "Graph")
+![Graph](C:/Users/Shaki/Documents/GitHub/CabOnDemand/Cab_Service_Project/img/Display_1.png)
 
 **Examples of Queries** 
 
@@ -80,7 +81,7 @@ FROM PERSONA_DETAILS, OFFICE
 WHERE STAFFID =MANAGERID; 
 
 SELECT DRIVERS.OFFICEID, OFFICE.BOUROUGH, DRIVERS.DRIVERID, DRIVERS.GENDER, DRIVERS.FIRSTNAME,DRIVERS.LASTNAME FROM OFFICE, DRIVERS
-WHERE DRIVERS.GENDER = 'F' AND (OFFICE.BOUROUGH ='Ealing' OR OFFICE.BOUROUGH ='Islington'); 
+WHERE DRIVERS.GENDER = 'F' AND (OFFICE.BOUROUGH ='Ealing' OR OFFICE.BOUROUGH ='Islington');
 
 SELECT TAXI.TREG, TAXI.OWNERID, TAXI.INSURANCEDATE, TAXI.CMILEAGE_1000S,TAXI.CAPACITY, HR.DRIVERS.OFFICEID, LOCATION.BOUROUGH FROM DRIVERS, TAXI, LOCATION
 WHERE HR.DRIVERS.OFFICEID = 'EA09' AND
