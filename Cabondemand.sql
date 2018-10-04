@@ -1,0 +1,922 @@
+SQL 
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table LOCATION
+--------------------------------------------------------
+
+  CREATE TABLE "LOCATION" ("PROPERTYNO" NUMBER(4,0), "OFFICEID" VARCHAR2(26), "BOUROUGH" VARCHAR2(26), "STREETNAME" VARCHAR2(26), "POSTCODE" VARCHAR2(26))
+REM INSERTING into LOCATION
+SET DEFINE OFF;
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (23,'IS01','Islington','Highbury','N5 1AB');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (67,'IS02','Islington','AngelHighst','N1 2PB');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (45,'HA03','Haringay','BruceGrove','N17  9EZ');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (12,'HA04','Haringay','Woodgreen','N22 6YQ');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (1,'IS03','Islington','UpperSt','N1 0QH');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (7,'CA01','Camden','ChalkFarm','NW1 8AR');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (33,'CA03','Camden','GregSt','NW20 6PQ');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (23,'ED07','Edmonton','PaulSt','N25 7TH');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (5,'EA09','Ealing','CathySt','W14 9BL');
+Insert into LOCATION (PROPERTYNO,OFFICEID,BOUROUGH,STREETNAME,POSTCODE) values (17,'HAM01','Hammersmith','QueenSt','W20 4RT');
+--------------------------------------------------------
+--  DDL for Index LOCATION_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LOCATION_PK" ON "LOCATION" ("PROPERTYNO", "BOUROUGH", "STREETNAME")
+--------------------------------------------------------
+--  Constraints for Table LOCATION
+--------------------------------------------------------
+
+  ALTER TABLE "LOCATION" MODIFY ("PROPERTYNO" NOT NULL ENABLE)
+  ALTER TABLE "LOCATION" MODIFY ("OFFICEID" NOT NULL ENABLE)
+  ALTER TABLE "LOCATION" MODIFY ("BOUROUGH" NOT NULL ENABLE)
+  ALTER TABLE "LOCATION" MODIFY ("STREETNAME" NOT NULL ENABLE)
+  ALTER TABLE "LOCATION" MODIFY ("POSTCODE" NOT NULL ENABLE)
+  ALTER TABLE "LOCATION" ADD CONSTRAINT "LOCATION_PK" PRIMARY KEY ("PROPERTYNO", "BOUROUGH", "STREETNAME") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table LOCATION
+--------------------------------------------------------
+
+  ALTER TABLE "LOCATION" ADD CONSTRAINT "LOCATION_FK1" FOREIGN KEY ("OFFICEID") REFERENCES "OFFICE" ("OFFICEID") ENABLE
+
+--------------------------------------------------------
+--  DDL for Table CAR_DETAILS
+--------------------------------------------------------
+
+  CREATE TABLE "CAR_DETAILS" ("TREG" VARCHAR2(26), "MODEL" VARCHAR2(26), "MAKE" VARCHAR2(26), "COLOR" VARCHAR2(26))
+REM INSERTING into CAR_DETAILS
+SET DEFINE OFF;
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('NC41-BTM','Avesis','Toyota','Black');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('TZ08-PFJ','Prius','Toyata','Yellow');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('RT42-XJK','QashQay','Nissan','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('FO24-NHW','Ramisu','Perodua','Grey');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('BX20-AQK','Zakte','BMW','Black');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('IE25-NHS','M8','BMW','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('IQ99-IWO','V12','Honda','Purple');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('LZ81-UKJ','TAIKE','Hyundai','Maroon');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('VK48-RSJ','Zama','VW','Mangeta');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('WY02-BGX','Skodie','Benzi','Beige');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('GE64-JOC','Polo','VW','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('AI34-BID','Rakiti','Kia','Yellow');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('CW53-TSH','Shamsi','Chevlerot','White');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('AQ60-ASZ','M8','BMW','DarkGreen');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('FS33-TEH','Malibu','Ford','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('SD45-NIZ','Equis','ISUZU','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('UR57-RPU','Oasis','Dodge','Pink');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('XZ01-SAP','ZamZam','Seat','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('JV06-OHZ','Azera','Renault','Silva');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('KW76-BUW','Genesis','Daewoo','Grey');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('CQ89-VUA','Java','Fiat','Blue');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('WL40-WVH','Focus','Ford','Yellow');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('HF87-LRN','Mondeo','Mazda','White');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('BN88-KBC','Ashanti','Yamaha','DarkGreen');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('YL98-NTC','Yaris','Isuzu','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('AS12-QKS','Vios','TOYOTA','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('SZ75-XPK','Tiguan','Honda','Pink');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('MO31-OWQ','Rav4','Range','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('DP12-ASL','Hais','Nissan','Silva');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('IJ03-DVC','Tiktoi','Taata','Grey');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('DK48-ALF','Zamani','Trys','Blue');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('QU94-SWO','Juara','Honda','Yellow');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('CI93-GSE','Minx','Cranes','Red');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('WO65-DBF','Tyra','Zaman','Grey');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('UM10-DZR','Banks','Smart','Black');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('EI12-RQY','Rush','Audi','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('AE11-GNC','Gutra','GMC','Purple');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('WZ19-DHE','XXK','Lincoln','Maroon');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('LM43-LZH','Cryt','Jaguar','Mangeta');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('IZ44-QGN','MMRTS','Saab','Beige');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('UK44-RGK','Trankist','Mitsubishi','Brown');
+Insert into CAR_DETAILS (TREG,MODEL,MAKE,COLOR) values ('TY56-HGF','Zooom','Volvo','Grey');
+--------------------------------------------------------
+--  DDL for Index CAR_DETAILS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CAR_DETAILS_PK" ON "CAR_DETAILS" ("TREG")
+--------------------------------------------------------
+--  Constraints for Table CAR_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "CAR_DETAILS" MODIFY ("TREG" NOT NULL ENABLE)
+  ALTER TABLE "CAR_DETAILS" MODIFY ("MODEL" NOT NULL ENABLE)
+  ALTER TABLE "CAR_DETAILS" MODIFY ("MAKE" NOT NULL ENABLE)
+  ALTER TABLE "CAR_DETAILS" MODIFY ("COLOR" NOT NULL ENABLE)
+  ALTER TABLE "CAR_DETAILS" ADD CONSTRAINT "CAR_DETAILS_PK" PRIMARY KEY ("TREG") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table CAR_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "CAR_DETAILS" ADD CONSTRAINT "CAR_DETAILS_FK1" FOREIGN KEY ("TREG") REFERENCES "TAXI" ("TREG") ENABLE
+
+--------------------------------------------------------
+--  DDL for Table CLIENTS
+--------------------------------------------------------
+
+  CREATE TABLE "CLIENTS" ("CLIENTSID" VARCHAR2(26), "FNAME" VARCHAR2(26), "LNAME" VARCHAR2(26), "PHONENO" VARCHAR2(26))
+REM INSERTING into CLIENTS
+SET DEFINE OFF;
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL001','Shirley','Jackson','07507 985212');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL002','Teresa','Mitchell','07468 385998');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL003','Donald','Bell','070 1870 1257');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL004','Amy','Ramirez','076 9371 1596');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL005','Helen','Carpenter','076 8209 1962');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL006','Jeffrey','Clark','070 4559 7173');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL007','Lisa','Lynch','(026) 1724 5710');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL008','Diana','Webb','07624 520127');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL009','Sara','Hansen','(022) 4000 3348');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL010','Stephanie','Davis','076 7950 3579');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL011','Harold','Lane','(028) 5872 5399');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL012','Christopher','Hanson','07624 786206');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL013','Ryan','Cole','076 9869 8785');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL014','Stephen','Gibson','076 8828 8835');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL015','Sharon','Palmer','076 6911 1612');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL016','Ruth','Henry','0800 991 2704');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL017','Joseph','Schmidt','0800 669 0797');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL018','Martin','Reyes','070 3466 4916');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL019','Terry','Garrett','076 0704 0656');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL020','George','Harper','070 3043 0723');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL021','Douglas','Wagner','070 5413 1503');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL022','Mildred','Carpenter','0800 821 6426');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL023','Marie','Sanders','(022) 7338 5221');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL024','Bruce','Allen','076 3781 5872');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL025','Sandra','Howell','(026) 0560 2506');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL026','Lawrence','Sullivan','07879 568865');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL027','Deborah','Hill','070 9104 2095');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL028','Louis','Martinez','076 3543 2322');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL029','Nicholas','Davis','07624 206794');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL030','Jason','Mitchell','0800 168 3387');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL031','Earl','Morales','07761 887509');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL032','Todd','Russell','0800 578 6554');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL033','Judy','Washington','0891 500 7417');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL034','Joshua','Hernandez','0800 020 1894');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL035','Daniel','Hall','0800 561 3837');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL036','Jeremy','Webb','0873 525 7866');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL037','Jack','Brown','070 8467 0766');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL038','Frank','Mcdonald','07624 556554');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL039','Christine','Williamson','070 7786 9290');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL040','Bobby','Stanley','0800 049 9368');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL041','Janice','Lane','0874 344 4337');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL042','Randy','Armstrong','076 9708 2134');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL043','Amy','Crawford','070 9492 3035');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL044','Samuel','Fowler','070 3542 6800');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL045','Ralph','Jackson','0800 254 2337');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL046','Kenneth','Daniels','070 5403 8496');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL047','Johnny','Chapman','07254 801436');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL048','Edward','Elliott','0800 957 3778');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL049','Patricia','Murphy','076 6355 3640');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL050','Tammy','Turner','07624 592727');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL051','Ruby','Stone','07915 748925');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL052','Judith','Ruiz','0800 675 3714');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL053','Lillian','Powell','076 2846 6729');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL054','Barbara','Nichols','07624 855008');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL055','Jennifer','Jones','076 6514 4148');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL056','Jesse','Hamilton','07624 448918');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL057','Douglas','Lopez','0800 136 1548');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL058','Eugene','Harrison','07624 051687');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL059','Betty','Gomez','076 6688 7667');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL060','Roy','Stephens','07624 262157');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL061','Thomas','Wood','07624 306441');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL062','Anthony','Rogers','07892 944593');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL063','Albert','Miller','076 3355 9171');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL064','Jeffrey','Rose','0800 687 4798');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL065','Carolyn','Nelson','0886 491 2899');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL066','Antonio','Alexander','07624 295091');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL067','Robin','Brooks','07634 513241');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL068','William','Duncan','070 2719 7321');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL069','Anne','Hawkins','076 4890 2754');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL070','David','Long','070 9412 4544');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL071','Paul','Weaver','0808 247 8475');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL072','John','Hayes','0800 445 7897');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL073','Jesse','Brooks','076 9591 8115');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL074','Shirley','Bradley','07999 481917');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL075','Gary','Tucker','0813 821 8974');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL076','Johnny','Stanley','076 3526 6291');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL077','Ann','Cunningham','0800 080 4412');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL078','Doris','Bell','076 6537 6315');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL079','Marilyn','Payne','0800 862 5290');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL080','David','Reyes','0888 831 3811');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL081','Bonnie','Berry','076 0490 4127');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL082','Douglas','Turner','070 8189 8206');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL083','Victor','Dunn','0816 130 9657');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL084','Ann','Roberts','07343 714866');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL085','Gloria','Ryan','0800 136 9534');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL086','Deborah','Rose','07334 223009');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL087','Kevin','Rivera','07024 972728');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL088','Anna','Chapman','0800 947 4036');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL089','Jean','Watkins','076 9357 0123');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL090','Carl','Long','0800 513 5353');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL091','Christopher','Reid','0830 471 5704');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL092','Robert','Stanley','070 6654 1549');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL093','Doris','Williamson','0855 293 9378');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL094','Gary','Tucker','0854 599 1556');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL095','Pamela','Hudson','0800 779 1216');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL096','Barbara','Riley','07655 305708');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL097','Kenneth','Watson','07624 904223');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL098','Marilyn','Foster','0800 617 2599');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL099','Douglas','Day','0890 708 7430');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL100','Sara','Dixon','07624 139686');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL101','Maria','Campbell','070 9104 2095');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL102','Kathy','Ramos','076 3543 2322');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL103','Andrew','Bryant','07624 206794');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL104','Lillian','Gardner','0800 168 3387');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL105','Judith','Fowler','07761 887509');
+Insert into CLIENTS (CLIENTSID,FNAME,LNAME,PHONENO) values ('CL106','Ashley','Reed','0800 578 6554');
+--------------------------------------------------------
+--  DDL for Index CLIENTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CLIENTS_PK" ON "CLIENTS" ("CLIENTSID")
+--------------------------------------------------------
+--  Constraints for Table CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "CLIENTS" MODIFY ("CLIENTSID" NOT NULL ENABLE)
+  ALTER TABLE "CLIENTS" MODIFY ("FNAME" NOT NULL ENABLE)
+  ALTER TABLE "CLIENTS" MODIFY ("LNAME" NOT NULL ENABLE)
+  ALTER TABLE "CLIENTS" MODIFY ("PHONENO" NOT NULL ENABLE)
+  ALTER TABLE "CLIENTS" ADD CONSTRAINT "CLIENTS_PK" PRIMARY KEY ("CLIENTSID") USING INDEX  ENABLE
+
+--  DDL for Table DRIVERS
+--------------------------------------------------------
+
+  CREATE TABLE "DRIVERS" ("DRIVERID" VARCHAR2(26), "TREG" VARCHAR2(26), "OFFICEID" VARCHAR2(26), "FIRSTNAME" VARCHAR2(26), "LASTNAME" VARCHAR2(26), "LINCENCENO" VARCHAR2(26), "PHONENO" NUMBER(13,0), "GENDER" VARCHAR2(26))
+REM INSERTING into DRIVERS
+SET DEFINE OFF;
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr001','NC41-BTM','IS01','Victor','Morris','WBEPN82083LAMW',77284238142,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr002','TZ08-PFJ','IS02','Lois','Bradley','IGPMF09022ADWIH',77663282227,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr003','RT42-XJK','HA03','Maria','King','AGNUL18937FGIUY',77947404232,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr004','FO24-NHW','HA04','Ashley','Johnson','KBCGY00075OZXJL',77149202979,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr005','BX20-AQK','IS03','Frank','Jackson','HFRKL64424BCPVQ',77378028356,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr006','IE25-NHS','CA01','James','Foster','GOBKM98227JPAGD',77175166458,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr007','IQ99-IWO','CA03','Mary','Wilson','QBGOS18524ELGYX',77033519550,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr008','LZ81-UKJ','ED07','Eric','Fields','ZUQFC38885UJCLV',77256460082,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr009','VK48-RSJ','EA09','Lawrence','Olson','TWEHD67518EQTCJ',77339187044,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr010','WY02-BGX','HAM01','Wanda','Dunn','CJDQE39419APRNK',77578853565,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr011','GE64-JOC','IS01','Jeremy','Brooks','WGQFH56907KVBNT',77718290248,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr012','AI34-BID','IS02','Gloria','Dunn','IRXDK35487CBEUY',77164221005,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr013','CW53-TSH','HA03','Jason','Cooper','CQFYO49751BJFQK',77151803118,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr014','AQ60-ASZ','HA04','Rose','Harris','ZGIXP44855JZSKB',77821433469,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr015','FS33-TEH','IS03','Robin','Johnston','TDVYO14264LBXZV',77996179284,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr016','SD45-NIZ','CA01','Angela','Ray','HOGTL40686TBNWR',77524051385,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr017','UR57-RPU','CA03','Frank','Reed','HQMZY57248LQVOH',77601635129,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr018','XZ01-SAP','ED07','Tammy','Anderson','QSHJB17841IPKXN',77104974594,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr019','JV06-OHZ','EA09','Janice','Cox','HEJTL08760ULDOT',77017016452,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr020','KW76-BUW','HAM01','Antonio','Elliott','NFRJB80666BFMRI',77134027734,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr021','CQ89-VUA','IS01','Mark','Cooper','QXOJP08940AZBHD',77032069554,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr022','WL40-WVH','IS02','Katherine','Burns','KPWHS60011RPZFK',77252961440,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr023','HF87-LRN','HA03','Rose','Ross','RPVZY84072JCBQF',77872107829,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr024','BN88-KBC','HA04','Dorothy','Cooper','URVWO09176OAUIX',77295608243,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr025','YL98-NTC','IS03','Linda','Chapman','COFIK60419FBWEV',77201310183,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr026','AS12-QKS','CA01','William','Thomas','OLBCK73052XRIUF',77552856957,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr027','SZ75-XPK','CA03','Lawrence','Moore','CHODR19861HFZMB',77269825744,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr028','MO31-OWQ','ED07','Charles','Carter','ZEYQS64819HFIGL',77319960293,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr029','DP12-ASL','EA09','Annie','Reed','VDKMJ22837SALYI',77954612398,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr030','IJ03-DVC','HAM01','Annie','White','DZRPW50309PRYCF',77010117691,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr031','DK48-ALF','IS01','Deborah','Jacobs','WJZCK71417OVUYS',77079086227,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr032','QU94-SWO','IS02','Christine','Brooks','PALOD48794YXGBC',77491698432,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr033','CI93-GSE','HA03','Lori','Webb','XVFZL67267SWZQG',77993692551,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr034','WO65-DBF','HA04','Bonnie','Foster','STQBA66495VEICW',77645894975,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr035','UM10-DZR','IS03','Christine','Rodriguez','NEHUP36400BTVEU',77821651442,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr036','EI12-RQY','CA01','Paula','Butler','IWEJG75282UCBOM',77057208890,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr037','AE11-GNC','CA03','Melissa','Ruiz','UAFSP30104IVZKX',77738801190,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr038','WZ19-DHE','ED07','Patrick','Hudson','KJHOQ47204WXFYI',77486712643,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr039','LM43-LZH','EA09','Louise','Fernandez','IPGRY09507WYKTM',77516586155,'F');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr040','IZ44-QGN','HAM01','Peter','Pierce','TPUYW47975BYTHQ',77930990838,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr041','UK44-RGK','IS03','Harold','Woods','DXBWL90347IVZBR',77003653122,'M');
+Insert into DRIVERS (DRIVERID,TREG,OFFICEID,FIRSTNAME,LASTNAME,LINCENCENO,PHONENO,GENDER) values ('Dr042','TY56-HGF','CA01','Daniel','Medina','LQERP39756ZFUHL',77431317959,'M');
+--------------------------------------------------------
+--  DDL for Index DRIVERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "DRIVERS_PK" ON "DRIVERS" ("DRIVERID")
+--------------------------------------------------------
+--  Constraints for Table DRIVERS
+--------------------------------------------------------
+
+  ALTER TABLE "DRIVERS" MODIFY ("DRIVERID" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("TREG" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("OFFICEID" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("FIRSTNAME" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("LASTNAME" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("LINCENCENO" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("PHONENO" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" MODIFY ("GENDER" NOT NULL ENABLE)
+  ALTER TABLE "DRIVERS" ADD CONSTRAINT "DRIVERS_PK" PRIMARY KEY ("DRIVERID") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table DRIVERS
+--------------------------------------------------------
+
+  ALTER TABLE "DRIVERS" ADD CONSTRAINT "DRIVERS_FK1" FOREIGN KEY ("TREG") REFERENCES "TAXI" ("TREG") ENABLE
+  ALTER TABLE "DRIVERS" ADD CONSTRAINT "DRIVERS_FK2" FOREIGN KEY ("OFFICEID") REFERENCES "OFFICE" ("OFFICEID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table EMAIL
+--------------------------------------------------------
+
+  CREATE TABLE "EMAIL" ("OFFICEID" VARCHAR2(26), "OFFICEEMAIL" VARCHAR2(26), "ENQUIRY" VARCHAR2(26)) 
+
+   COMMENT ON COLUMN "EMAIL"."OFFICEID" IS 'Foreign key and part of a primary key'
+   COMMENT ON COLUMN "EMAIL"."OFFICEEMAIL" IS 'Emails  have an @cabsondemand.uk extention'
+   COMMENT ON COLUMN "EMAIL"."ENQUIRY" IS 'Customer enquiries are recorded'
+REM INSERTING into EMAIL
+SET DEFINE OFF;
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('IS01','Is01office','infoIS01');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('IS02','is02office','infoIS02');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('HA03','ha03office','infoHA03');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('HA04','ha04office','infoHA04');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('IS03','is03office','infoIS03');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('CA01','ca01office','infoCA01');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('CA03','ca03office','infoCA03');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('ED07','ed07office','infoED07');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('EA09','ea09office','infoEA09');
+Insert into EMAIL (OFFICEID,OFFICEEMAIL,ENQUIRY) values ('HAM01','ham01office','infoHAM01');
+--------------------------------------------------------
+--  DDL for Index OFFICEID
+--------------------------------------------------------
+
+  CREATE INDEX "OFFICEID" ON "EMAIL" ("OFFICEID")
+--------------------------------------------------------
+--  Constraints for Table EMAIL
+--------------------------------------------------------
+
+  ALTER TABLE "EMAIL" ADD CONSTRAINT "OFFICEID" PRIMARY KEY ("OFFICEID") DEFERRABLE USING INDEX  ENABLE NOVALIDATE
+  ALTER TABLE "EMAIL" MODIFY ("OFFICEID" NOT NULL ENABLE NOVALIDATE)
+--------------------------------------------------------
+--  Ref Constraints for Table EMAIL
+--------------------------------------------------------
+
+  ALTER TABLE "EMAIL" ADD CONSTRAINT "EMAIL_FK1" FOREIGN KEY ("OFFICEID") REFERENCES "OFFICE" ("OFFICEID") DEFERRABLE DISABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table TAXI_OWNER
+--------------------------------------------------------
+
+  CREATE TABLE "TAXI_OWNER" ("OWNER_ID" VARCHAR2(26), "TREG" VARCHAR2(26), "FIRSTNAME" VARCHAR2(26), "LASTNAME" VARCHAR2(26))
+REM INSERTING into TAXI_OWNER
+SET DEFINE OFF;
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own001','NC41-BTM','Bonnie','Fowler');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own002','TZ08-PFJ','Emily','Price');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own003','RT42-XJK','Sarah','Ryan');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own004','FO24-NHW','Ernest','Taylor');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own005','BX20-AQK','Tammy','Wagner');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own006','IE25-NHS','Frances','Rodriguez');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own007','IQ99-IWO','Donald','Perkins');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own008','LZ81-UKJ','Randy','Garcia');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own009','VK48-RSJ','Jean','Ford');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own010','WY02-BGX','Randy','Lawson');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own011','GE64-JOC','Christopher','Knight');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own012','AI34-BID','Todd','Hudson');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own013','CW53-TSH','Shawn','Perkins');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own014','AQ60-ASZ','Jesse','Wood');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own015','FS33-TEH','Joe','Lane');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own016','SD45-NIZ','Rebecca','Cox');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own017','UR57-RPU','Andrew','Riley');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own018','XZ01-SAP','Janice','Russell');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own019','JV06-OHZ','Anne','Richards');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own020','KW76-BUW','Daniel','Berry');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own021','CQ89-VUA','Phyllis','Shaw');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own022','WL40-WVH','Bruce','Reid');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own023','HF87-LRN','Shawn','Wilson');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own024','BN88-KBC','Kathy','Ray');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own025','YL98-NTC','Paul','Evans');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own026','AS12-QKS','Pamela','Reyes');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own027','SZ75-XPK','Keith','Morales');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own028','MO31-OWQ','James','Fernandez');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own029','DP12-ASL','Craig','Grant');
+Insert into TAXI_OWNER (OWNER_ID,TREG,FIRSTNAME,LASTNAME) values ('Own030','IJ03-DVC','Carolyn','Perry');
+--------------------------------------------------------
+--  DDL for Index TAXI_OWNER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TAXI_OWNER_PK" ON "TAXI_OWNER" ("OWNER_ID")
+--------------------------------------------------------
+--  Constraints for Table TAXI_OWNER
+--------------------------------------------------------
+
+  ALTER TABLE "TAXI_OWNER" ADD CONSTRAINT "TAXI_OWNER_PK" PRIMARY KEY ("OWNER_ID") USING INDEX  ENABLE
+  ALTER TABLE "TAXI_OWNER" MODIFY ("OWNER_ID" NOT NULL ENABLE)
+  ALTER TABLE "TAXI_OWNER" MODIFY ("TREG" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Ref Constraints for Table TAXI_OWNER
+--------------------------------------------------------
+
+  ALTER TABLE "TAXI_OWNER" ADD CONSTRAINT "TAXI_OWNER_FK1" FOREIGN KEY ("TREG") REFERENCES "TAXI" ("TREG") ENABLE
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table TAXI
+--------------------------------------------------------
+
+  CREATE TABLE "TAXI" ("TREG" VARCHAR2(26), "OWNERID" VARCHAR2(26), "INSURANCEDATE" DATE, "CMILEAGE_1000S" VARCHAR2(26), "CAPACITY" NUMBER(26,0))
+REM INSERTING into TAXI
+SET DEFINE OFF;
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('NC41-BTM','Own001',to_date('12-AUG-16','DD-MON-RR'),'85',4);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('TZ08-PFJ','Own002',to_date('08-SEP-16','DD-MON-RR'),'28',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('RT42-XJK','Own003',to_date('21-SEP-16','DD-MON-RR'),'46',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('FO24-NHW','Own004',to_date('13-OCT-16','DD-MON-RR'),'92',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('BX20-AQK','Own005',to_date('29-NOV-16','DD-MON-RR'),'44',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('IE25-NHS','Own006',to_date('06-DEC-16','DD-MON-RR'),'82',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('IQ99-IWO','Own007',to_date('08-FEB-17','DD-MON-RR'),'75',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('LZ81-UKJ','Own008',to_date('10-FEB-17','DD-MON-RR'),'18',9);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('VK48-RSJ','Own009',to_date('16-FEB-17','DD-MON-RR'),'73',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('WY02-BGX','Own010',to_date('08-MAR-17','DD-MON-RR'),'94',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('GE64-JOC','Own011',to_date('20-MAR-17','DD-MON-RR'),'12',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('AI34-BID','Own012',to_date('31-MAR-17','DD-MON-RR'),'99',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('CW53-TSH','Own013',to_date('17-APR-17','DD-MON-RR'),'40',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('AQ60-ASZ','Own014',to_date('07-JUN-17','DD-MON-RR'),'20',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('FS33-TEH','Own015',to_date('16-JUN-17','DD-MON-RR'),'92',4);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('SD45-NIZ','Own016',to_date('18-JUL-17','DD-MON-RR'),'39',8);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('UR57-RPU','Own017',to_date('04-SEP-17','DD-MON-RR'),'94',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('XZ01-SAP','Own018',to_date('06-SEP-17','DD-MON-RR'),'98',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('JV06-OHZ','Own019',to_date('29-SEP-17','DD-MON-RR'),'47',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('KW76-BUW','Own020',to_date('27-OCT-17','DD-MON-RR'),'93',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('CQ89-VUA','Own021',to_date('07-NOV-17','DD-MON-RR'),'88',4);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('WL40-WVH','Own022',to_date('13-DEC-17','DD-MON-RR'),'28',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('HF87-LRN','Own023',to_date('15-DEC-17','DD-MON-RR'),'77',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('BN88-KBC','Own024',to_date('18-DEC-17','DD-MON-RR'),'60',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('YL98-NTC','Own025',to_date('27-DEC-17','DD-MON-RR'),'57',9);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('AS12-QKS','Own026',to_date('19-SEP-16','DD-MON-RR'),'64',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('SZ75-XPK','Own027',to_date('17-OCT-16','DD-MON-RR'),'94',8);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('MO31-OWQ','Own028',to_date('02-NOV-16','DD-MON-RR'),'15',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('DP12-ASL','Own029',to_date('16-NOV-16','DD-MON-RR'),'45',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('IJ03-DVC','Own030',to_date('17-NOV-16','DD-MON-RR'),'11',8);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('DK48-ALF','Own016',to_date('18-NOV-16','DD-MON-RR'),'34',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('QU94-SWO','Own017',to_date('20-DEC-16','DD-MON-RR'),'58',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('CI93-GSE','Own018',to_date('22-DEC-16','DD-MON-RR'),'81',9);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('WO65-DBF','Own019',to_date('10-JAN-17','DD-MON-RR'),'79',8);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('UM10-DZR','Own020',to_date('12-JAN-17','DD-MON-RR'),'70',5);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('EI12-RQY','Own021',to_date('31-JAN-17','DD-MON-RR'),'66',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('AE11-GNC','Own022',to_date('10-MAR-17','DD-MON-RR'),'49',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('WZ19-DHE','Own023',to_date('24-MAR-17','DD-MON-RR'),'53',3);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('LM43-LZH','Own024',to_date('10-APR-17','DD-MON-RR'),'90',6);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('IZ44-QGN','Own025',to_date('18-MAY-17','DD-MON-RR'),'55',7);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('UK44-RGK','Own026',to_date('19-MAY-17','DD-MON-RR'),'36',4);
+Insert into TAXI (TREG,OWNERID,INSURANCEDATE,CMILEAGE_1000S,CAPACITY) values ('TY56-HGF','Own027',to_date('10-JUL-17','DD-MON-RR'),'18',7);
+--------------------------------------------------------
+--  DDL for Index TAXI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TAXI_PK" ON "TAXI" ("TREG")
+--------------------------------------------------------
+--  Constraints for Table TAXI
+--------------------------------------------------------
+
+  ALTER TABLE "TAXI" ADD CONSTRAINT "TAXI_PK" PRIMARY KEY ("TREG") USING INDEX  ENABLE
+  ALTER TABLE "TAXI" MODIFY ("TREG" NOT NULL ENABLE)
+  ALTER TABLE "TAXI" MODIFY ("OWNERID" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Ref Constraints for Table TAXI
+--------------------------------------------------------
+
+  ALTER TABLE "TAXI" ADD CONSTRAINT "TAXI_FK1" FOREIGN KEY ("OWNERID") REFERENCES "TAXI_OWNER" ("OWNER_ID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table STAFF
+--------------------------------------------------------
+
+  CREATE TABLE "STAFF" ("OFFICEID" VARCHAR2(26), "STAFFID" VARCHAR2(26), "NI" VARCHAR2(26), "GENDER" VARCHAR2(26), "SALARY" NUMBER(7,0), "MANAGERID" VARCHAR2(26))
+REM INSERTING into STAFF
+SET DEFINE OFF;
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS01','IS01ST00','AB123456C','M',20000,'IS01mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS02','IS02ST01','GB456456T','F',20000,'IS02mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HA03','HA03ST01','GB193556C','F',20000,'HA03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HA04','HA04ST03','BC786547K','M',20000,'HA04mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS03','IS03ST04','BC459682P','M',20000,'IS03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('CA01','CA01ST09','DG598642F','M',20000,'CA01mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('CA03','CA03ST02','HD965874P','F',20000,'CA03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('ED07','ED07ST07','AR789582C','M',20000,'ED07mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('EA09','EA09ST08','AB859672C','M',20000,'EA09mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HAM01','HAM01ST23','AU785264C','F',20000,'HAM01mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS01','IS01mgr','AP357951C','F',30000,'IS01mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS02','IS02mgr','AY456852C','M',30000,'IS02mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HA03','HA03mgr','PB756984O','F',30000,'HA03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HA04','HA04mgr','AB321475K','M',30000,'HA04mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('IS03','IS03mgr','KA987458C','M',30000,'IS03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('CA01','CA01mgr','AP855825P','F',30000,'CA01mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('CA03','CA03mgr','AO789654C','F',30000,'CA03mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('ED07','ED07mgr','AT596320C','M',30000,'ED07mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('EA09','EA09mgr','AR564534C','M',30000,'EA09mgr');
+Insert into STAFF (OFFICEID,STAFFID,NI,GENDER,SALARY,MANAGERID) values ('HAM01','HAM01mgr','AL759542P','F',30000,'HAM01mgr');
+--------------------------------------------------------
+--  DDL for Index STAFF_UK1
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "STAFF_UK1" ON "STAFF" ("NI")
+--------------------------------------------------------
+--  DDL for Index STAFF_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "STAFF_PK" ON "STAFF" ("STAFFID")
+--------------------------------------------------------
+--  Constraints for Table STAFF
+--------------------------------------------------------
+
+  ALTER TABLE "STAFF" MODIFY ("OFFICEID" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" MODIFY ("STAFFID" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" MODIFY ("NI" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" MODIFY ("GENDER" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" MODIFY ("SALARY" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" MODIFY ("MANAGERID" NOT NULL ENABLE)
+  ALTER TABLE "STAFF" ADD CONSTRAINT "STAFF_PK" PRIMARY KEY ("STAFFID") USING INDEX  ENABLE
+  ALTER TABLE "STAFF" ADD CONSTRAINT "STAFF_UK1" UNIQUE ("NI") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table STAFF
+--------------------------------------------------------
+
+  ALTER TABLE "STAFF" ADD CONSTRAINT "STAFF_FK1" FOREIGN KEY ("MANAGERID") REFERENCES "OFFICE" ("MANAGERID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PRIVATE_CLIENTS
+--------------------------------------------------------
+
+  CREATE TABLE "PRIVATE_CLIENTS" ("CLIENTID" VARCHAR2(26), "CHARGE" NUMBER(6,2))
+REM INSERTING into PRIVATE_CLIENTS
+SET DEFINE OFF;
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL001',16.03);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL002',90.65);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL003',84.4);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL004',55.85);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL005',78.48);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL006',74.06);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL007',91.27);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL008',64.6);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL009',71.23);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL010',26.78);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL011',12.52);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL012',50.3);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL013',94.17);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL014',29.64);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL015',40.64);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL016',26.9);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL017',7.4);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL018',72.09);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL019',53.81);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL020',15.93);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL021',64.03);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL022',5.03);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL023',63.2);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL024',43.39);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL025',69.37);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL026',13.13);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL027',49.78);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL028',19.19);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL029',32.67);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL030',50.78);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL031',8.73);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL032',9.73);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL033',28.64);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL034',42.85);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL035',39.58);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL036',98.35);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL037',62.56);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL038',32.94);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL039',8.86);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL040',80.89);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL041',15);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL042',61.6);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL043',28.36);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL044',81.24);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL045',66.5);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL046',83.65);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL047',13.56);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL048',39.53);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL049',33.87);
+Insert into PRIVATE_CLIENTS (CLIENTID,CHARGE) values ('CL050',6.57);
+--------------------------------------------------------
+--  DDL for Index PRIVATE_CLIENTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PRIVATE_CLIENTS_PK" ON "PRIVATE_CLIENTS" ("CLIENTID")
+--------------------------------------------------------
+--  Constraints for Table PRIVATE_CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "PRIVATE_CLIENTS" MODIFY ("CLIENTID" NOT NULL ENABLE)
+  ALTER TABLE "PRIVATE_CLIENTS" MODIFY ("CHARGE" NOT NULL ENABLE)
+  ALTER TABLE "PRIVATE_CLIENTS" ADD CONSTRAINT "PRIVATE_CLIENTS_PK" PRIMARY KEY ("CLIENTID") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table PRIVATE_CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "PRIVATE_CLIENTS" ADD CONSTRAINT "PRIVATE_CLIENTS_FK1" FOREIGN KEY ("CLIENTID") REFERENCES "CLIENTS" ("CLIENTSID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table PERSONA_DETAILS
+--------------------------------------------------------
+
+  CREATE TABLE "PERSONA_DETAILS" ("STAFFID" VARCHAR2(26), "FNAME" VARCHAR2(26), "LNAME" VARCHAR2(26), "DOB" DATE, "MOBILE" VARCHAR2(26))
+REM INSERTING into PERSONA_DETAILS
+SET DEFINE OFF;
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS01ST00','Echo','Holland',to_date('05-DEC-82','DD-MON-RR'),'076 6023 8753');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS02ST01','Nero','Higgins',to_date('10-MAY-80','DD-MON-RR'),'07051 995670');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HA03ST01','Hadassah','Cook',to_date('23-JAN-87','DD-MON-RR'),'076 3962 0477');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HA04ST03','Martin','Hicks',to_date('27-AUG-89','DD-MON-RR'),'076 0899 4194');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS03ST04','Ashton','Christensen',to_date('14-AUG-89','DD-MON-RR'),'07338 172466');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('CA01ST09','Gillian','Caldwell',to_date('27-APR-81','DD-MON-RR'),'07823 104359');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('CA03ST02','Mariko','Silva',to_date('02-MAY-84','DD-MON-RR'),'07612 906078');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('ED07ST07','Abdul','Elliott',to_date('05-MAY-93','DD-MON-RR'),'076 6428 8417');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('EA09ST08','Gillian','Stafford',to_date('22-JUN-88','DD-MON-RR'),'07927 910430');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HAM01ST23','Jerry','Fox',to_date('26-JUL-92','DD-MON-RR'),'07535 567037');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS01mgr','Brent','Burns',to_date('22-JAN-80','DD-MON-RR'),'07404 882364');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS02mgr','Zorita','Cohen',to_date('08-DEC-87','DD-MON-RR'),'7568 820598');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HA03mgr','Fleur','Olsen',to_date('06-AUG-87','DD-MON-RR'),'77 3294 3349');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HA04mgr','Ima','Gomez',to_date('14-AUG-92','DD-MON-RR'),'7505 234132');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('IS03mgr','Ulla','Valenzuela',to_date('27-APR-81','DD-MON-RR'),'77 2451 4295');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('CA01mgr','Stephen','Moody',to_date('19-AUG-82','DD-MON-RR'),'77 6023 8753');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('CA03mgr','Mariam','Mayer',to_date('28-OCT-80','DD-MON-RR'),'7052 995670');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('ED07mgr','Heather','Head',to_date('07-FEB-92','DD-MON-RR'),'7568 820598');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('EA09mgr','Robin','Palmer',to_date('17-AUG-87','DD-MON-RR'),'77 3294 3349');
+Insert into PERSONA_DETAILS (STAFFID,FNAME,LNAME,DOB,MOBILE) values ('HAM01mgr','Chadwick','Olsen',to_date('09-FEB-89','DD-MON-RR'),'7905 234132');
+--------------------------------------------------------
+--  DDL for Index PERSONA_DETAILS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PERSONA_DETAILS_PK" ON "PERSONA_DETAILS" ("STAFFID")
+--------------------------------------------------------
+--  Constraints for Table PERSONA_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "PERSONA_DETAILS" MODIFY ("STAFFID" NOT NULL ENABLE)
+  ALTER TABLE "PERSONA_DETAILS" MODIFY ("FNAME" NOT NULL ENABLE)
+  ALTER TABLE "PERSONA_DETAILS" MODIFY ("LNAME" NOT NULL ENABLE)
+  ALTER TABLE "PERSONA_DETAILS" MODIFY ("DOB" NOT NULL ENABLE)
+  ALTER TABLE "PERSONA_DETAILS" MODIFY ("MOBILE" NOT NULL ENABLE)
+  ALTER TABLE "PERSONA_DETAILS" ADD CONSTRAINT "PERSONA_DETAILS_PK" PRIMARY KEY ("STAFFID") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table PERSONA_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "PERSONA_DETAILS" ADD CONSTRAINT "PERSONA_DETAILS_FK1" FOREIGN KEY ("STAFFID") REFERENCES "STAFF" ("STAFFID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table JOB_PICK_UP
+--------------------------------------------------------
+
+  CREATE TABLE "JOB_PICK_UP" ("JOBID" VARCHAR2(26), "TIME" VARCHAR2(26), "LOCATION" VARCHAR2(26))
+REM INSERTING into JOB_PICK_UP
+SET DEFINE OFF;
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job001','10:23:46','N5 1AB');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job002','05:08:38','N1 2PB');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job003','07:50:29','N17  9EZ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job004','07:51:00','N22 6YQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job005','02:18:17','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job006','01:12:03','NW1 8AR');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job007','09:58:59','NW20 6PQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job008','08:04:20','N25 7TH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job009','03:30:54','W14 9BL');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job010','07:13:50','W20 4RT');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job011','10:15:14','N1 2PB');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job012','07:30:24','N17  9EZ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job013','08:53:04','N22 6YQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job014','11:49:32','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job015','02:26:13','NW1 8AR');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job016','01:10:53','NW20 6PQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job017','01:00:03','N25 7TH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job018','07:14:35','W14 9BL');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job019','06:21:35','N22 6YQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job020','08:08:48','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job021','02:59:32','NW1 8AR');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job022','03:31:18','NW20 6PQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job023','05:31:22','N25 7TH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job024','11:58:21','W14 9BL');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job025','10:24:14','W20 4RT');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job026','06:54:46','N1 2PB');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job027','09:20:49','N17  9EZ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job028','02:25:25','N22 6YQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job029','06:27:37','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job030','08:08:52','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job031','11:42:47','NW1 8AR');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job032','07:24:34','NW20 6PQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job033','01:19:11','N25 7TH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job034','10:22:36','W14 9BL');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job035','01:56:50','N22 6YQ');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job036','02:49:50','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job037','02:16:28','NW1 8AR');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job038','02:59:53','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job039','08:46:51','N1 0QH');
+Insert into JOB_PICK_UP (JOBID,TIME,LOCATION) values ('Job040','03:38:28','NW1 8AR');
+--------------------------------------------------------
+--  DDL for Index JOB_PICK_UP_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JOB_PICK_UP_PK" ON "JOB_PICK_UP" ("JOBID")
+--------------------------------------------------------
+--  Constraints for Table JOB_PICK_UP
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_PICK_UP" MODIFY ("TIME" NOT NULL ENABLE)
+  ALTER TABLE "JOB_PICK_UP" MODIFY ("LOCATION" NOT NULL ENABLE)
+  ALTER TABLE "JOB_PICK_UP" MODIFY ("JOBID" NOT NULL ENABLE)
+  ALTER TABLE "JOB_PICK_UP" ADD CONSTRAINT "JOB_PICK_UP_PK" PRIMARY KEY ("JOBID") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table JOB_PICK_UP
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_PICK_UP" ADD CONSTRAINT "JOB_PICK_UP_FK1" FOREIGN KEY ("JOBID") REFERENCES "JOB_CABS" ("JOBID") ENABLE
+
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table JOB_DROP
+--------------------------------------------------------
+
+  CREATE TABLE "JOB_DROP" ("JOBID" VARCHAR2(26), "TIME" VARCHAR2(26), "LOCATION" VARCHAR2(26), "MILEAGE" NUMBER(26,0))
+REM INSERTING into JOB_DROP
+SET DEFINE OFF;
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job001','12:55:17','CR0 9JQ',14);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job002','03:38:35','N1',4);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job003','05:35:21','N22 6YQ',11);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job004','06:57:31','N1 0QH',13);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job005','12:57:49','N1 0QH',2);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job006','07:25:15','NW1 8AR',10);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job007','07:24:32','NW20 6PQ',19);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job008','09:57:23','N25 7TH',1);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job009','11:19:45','W14 9BL',14);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job010','03:42:06','N22 6YQ',6);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job011','09:34:48','N1 0QH',10);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job012','01:48:06','NW1 8AR',12);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job013','06:03:05','N1 0QH',8);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job014','01:13:25','CR5 5FG',1);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job015','07:36:16','E12 4GT',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job016','08:58:00','SE19 3QD',20);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job017','06:18:09','HE1 3RT',11);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job018','05:10:11','T1 4TG',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job019','03:12:03','EC34 5TH',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job020','02:14:55','RM4 1ET',11);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job021','08:11:28','N22 6YQ',9);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job022','04:53:11','N1 0QH',20);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job023','03:06:28','N1 0QH',12);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job024','11:18:45','NW1 8AR',19);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job025','11:46:33','NW20 6PQ',20);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job026','04:57:03','N25 7TH',16);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job027','08:16:16','W14 9BL',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job028','08:08:09','N22 6YQ',15);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job029','05:06:49','N1 0QH',12);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job030','10:01:39','NW1 8AR',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job031','01:07:01','N1 0QH',12);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job032','03:27:29','N1 0QH',13);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job033','05:11:31','NW1 8AR',14);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job034','02:39:52','CR0 9JQ',12);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job035','09:29:42','N1 9QH',18);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job036','09:12:16','N22 6YQ',17);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job037','05:40:59','N1 0QH',5);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job038','07:05:51','N1 0QH',17);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job039','12:18:39','NW1 8AR',13);
+Insert into JOB_DROP (JOBID,TIME,LOCATION,MILEAGE) values ('Job040','03:50:08','NW20 6PQ',16);
+--------------------------------------------------------
+--  DDL for Index JOB_DROP_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JOB_DROP_PK" ON "JOB_DROP" ("JOBID")
+--------------------------------------------------------
+--  Constraints for Table JOB_DROP
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_DROP" MODIFY ("TIME" NOT NULL ENABLE)
+  ALTER TABLE "JOB_DROP" MODIFY ("LOCATION" NOT NULL ENABLE)
+  ALTER TABLE "JOB_DROP" MODIFY ("MILEAGE" NOT NULL ENABLE)
+  ALTER TABLE "JOB_DROP" MODIFY ("JOBID" NOT NULL ENABLE)
+  ALTER TABLE "JOB_DROP" ADD CONSTRAINT "JOB_DROP_PK" PRIMARY KEY ("JOBID") USING INDEX  ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table JOB_DROP
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_DROP" ADD CONSTRAINT "JOB_DROP_FK1" FOREIGN KEY ("JOBID") REFERENCES "JOB_CABS" ("JOBID") ENABLE
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table JOB_CABS
+--------------------------------------------------------
+
+  CREATE TABLE "JOB_CABS" ("JOBID" VARCHAR2(26), "DATE_D" DATE, "REASONIFFAILED" VARCHAR2(26))
+REM INSERTING into JOB_CABS 
+SET DEFINE OFF;
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job001',to_date('02-OCT-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job002',to_date('14-SEP-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job003',to_date('26-JAN-16','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job004',to_date('23-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job005',to_date('06-MAR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job006',to_date('18-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job007',to_date('10-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job008',to_date('11-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job009',to_date('19-DEC-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job010',to_date('07-MAR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job011',to_date('03-JUN-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job012',to_date('24-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job013',to_date('24-APR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job014',to_date('08-JAN-16','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job015',to_date('24-JAN-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job016',to_date('02-JUN-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job017',to_date('23-MAR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job018',to_date('08-JUN-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job019',to_date('19-JAN-16','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job020',to_date('25-JAN-16','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job021',to_date('06-DEC-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job022',to_date('12-APR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job023',to_date('25-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job024',to_date('16-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job025',to_date('26-MAY-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job026',to_date('17-MAY-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job027',to_date('26-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job028',to_date('13-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job029',to_date('03-JAN-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job030',to_date('23-APR-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job031',to_date('17-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job032',to_date('24-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job033',to_date('27-OCT-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job034',to_date('17-OCT-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job035',to_date('09-JUL-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job036',to_date('26-JAN-16','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job037',to_date('25-AUG-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job038',to_date('22-FEB-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job039',to_date('20-OCT-15','DD-MON-RR'),null);
+Insert into JOB_CABS (JOBID,DATE_D,REASONIFFAILED) values ('Job040',to_date('11-APR-15','DD-MON-RR'),null);
+--------------------------------------------------------
+--  DDL for Index JOB_CABS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JOB_CABS_PK" ON "JOB_CABS" ("JOBID")
+--------------------------------------------------------
+--  Constraints for Table JOB_CABS
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_CABS" MODIFY ("JOBID" NOT NULL ENABLE)
+  ALTER TABLE "JOB_CABS" ADD CONSTRAINT "JOB_CABS_PK" PRIMARY KEY ("JOBID") USING INDEX  ENABLE
+  ALTER TABLE "JOB_CABS" MODIFY ("DATE_D" NOT NULL ENABLE)
+--------------------------------------------------------
+--  File created - Sunday-August-14-2016   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table JOB_ASSIGN
+--------------------------------------------------------
+
+  CREATE TABLE "JOB_ASSIGN" ("JOBID" VARCHAR2(26), "CLIENT" VARCHAR2(26), "STAFFID" VARCHAR2(26), "DRIVER" VARCHAR2(26), "LNAME" VARCHAR2(26), "PHONENUMBER" NUMBER(13,0))
+REM INSERTING into JOB_ASSIGN
+SET DEFINE OFF;
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job001','CL001','IS01ST00','Dr001','Morris',77284238142);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job002','CL002','IS02ST01','Dr002','Bradley',77663282227);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job003','CL003','HA03ST01','Dr003','King',77947404232);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job004','CL004','HA04ST03','Dr004','Johnson',77149202979);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job005','CL005','IS03ST04','Dr005','Jackson',77378028356);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job006','CL006','CA01ST09','Dr006','Foster',77175166458);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job007','CL007','CA03ST02','Dr007','Wilson',77033519550);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job008','CL008','ED07ST07','Dr008','Fields',77256460082);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job009','CL009','EA09ST08','Dr009','Olson',77339187044);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job010','CL010','HAM01ST23','Dr010','Dunn',77578853565);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job011','CL011','IS01mgr','Dr011','Brooks',77718290248);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job012','CL012','IS02mgr','Dr012','Dunn',77164221005);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job013','CL013','HA03mgr','Dr013','Cooper',77151803118);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job014','CL014','HA04mgr','Dr014','Harris',77821433469);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job015','CL015','IS03mgr','Dr015','Johnston',77996179284);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job016','CL016','CA01mgr','Dr016','Ray',77524051385);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job017','CL017','CA03mgr','Dr017','Reed',77601635129);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job018','CL018','ED07mgr','Dr018','Anderson',77104974594);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job019','CL019','EA09mgr','Dr019','Cox',77017016452);
+Insert into JOB_ASSIGN (JOBID,CLIENT,STAFFID,DRIVER,LNAME,PHONENUMBER) values ('Job020','CL020','HAM01mgr','Dr020','Elliott',77134027734);
+--------------------------------------------------------
+--  DDL for Index JOB_ASSIGN_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JOB_ASSIGN_PK" ON "JOB_ASSIGN" ("JOBID", "CLIENT", "STAFFID", "DRIVER")
+--------------------------------------------------------
+--  Constraints for Table JOB_ASSIGN
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_ASSIGN" ADD CONSTRAINT "JOB_ASSIGN_PK" PRIMARY KEY ("JOBID", "CLIENT", "STAFFID", "DRIVER") USING INDEX  ENABLE
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("JOBID" NOT NULL ENABLE)
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("CLIENT" NOT NULL ENABLE)
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("STAFFID" NOT NULL ENABLE)
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("DRIVER" NOT NULL ENABLE)
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("LNAME" NOT NULL ENABLE)
+  ALTER TABLE "JOB_ASSIGN" MODIFY ("PHONENUMBER" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Ref Constraints for Table JOB_ASSIGN
+--------------------------------------------------------
+
+  ALTER TABLE "JOB_ASSIGN" ADD CONSTRAINT "JOB_ASSIGN_FK1" FOREIGN KEY ("CLIENT") REFERENCES "CLIENTS" ("CLIENTSID") ENABLE
+  ALTER TABLE "JOB_ASSIGN" ADD CONSTRAINT "JOB_ASSIGN_FK2" FOREIGN KEY ("DRIVER") REFERENCES "DRIVERS" ("DRIVERID") ENABLE
+  ALTER TABLE "JOB_ASSIGN" ADD CONSTRAINT "JOB_ASSIGN_FK3" FOREIGN KEY ("JOBID") REFERENCES "JOB_CABS" ("JOBID") ENABLE
+  ALTER TABLE "JOB_ASSIGN" ADD CONSTRAINT "JOB_ASSIGN_FK4" FOREIGN KEY ("STAFFID") REFERENCES "STAFF" ("STAFFID") ENABLE
+
