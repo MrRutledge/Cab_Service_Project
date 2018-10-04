@@ -19,8 +19,10 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 * No two offices in the same building
 
 
-**Conceptual relations.**
-CabsOnDemand.
+**Conceptual relations.**\
+
+##Cabs On Demand.
+
 **Address**(Borough, houseNumber, StreetName, Postcode,)\
 **Office**(OfficeID, MobileNos, Email, AddressID*, Telephone, Manager)\
  **Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)\
@@ -31,48 +33,53 @@ CabsOnDemand.
 **Client**(ClientID, ClientType(Private,(charge)Business(Businestype,email)), FirstName SecName, phoneNo))\
 **Taxi**(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)\
 
-**UnNormalized** \
+**UnNormalized**\
 
-**CabsOnDemand**(Location(Borough, houseNumber, StreetName, Postcode,), **Office**( OfficeID, MobileNos, Email, Location, Telephone, Manager), Staff(StaffNumber, FirstName, SecName, NI, Address, D.O.B, Salary, Gender), Taxi Owner( OwnerID, FirstName, SecName, tReg), Driver(DriverID, FirstName, SecName, Gender), Contract(ContractID, DateSigned, DateDue, fixedCharge, NoofJobs),Job(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed), Client(ClientID, ClientType(Private,(charge)Business(Businestype,email address)), FirstName SecName Address, Contactdetaisl(MobileNo))Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate))
-Location(Borough, houseNumber, StreetName, Postcode,)
-Client(ClientID, ClientType(Private,(charge)Business(Businestype,email)), FirstName SecName, phoneNo))
-Contract(ContractID, officeId* DateSigned, DateDue, fixedCharge, NoofJobs)
-Driver(DriverID, FirstName, SecName, Gender, licenceNO)
-Job(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed)
-Office(OfficeID, MobileNos, Email, AddressID*, Telephone, Managerid)
- Staff(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
-Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)
-TaxiOwner(OwnerID, FirstName, SecName, tReg*)\
+**CabsOnDemand**(**Location**(Borough, houseNumber, StreetName, Postcode,), **Office**( OfficeID, MobileNos, Email, **Location**, Telephone, Manager), **Staff**(StaffNumber, FirstName, SecName, NI, Address, D.O.B, Salary, Gender), **Taxi Owner**( OwnerID, FirstName, SecName, tReg), **Driver**(DriverID, FirstName, SecName, Gender), **Contract**(ContractID, DateSigned, DateDue, fixedCharge, NoofJobs),**Job**(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed), **Client**(ClientID, ClientType(Private,(charge)Business(Businestype,email address)), FirstName SecName Address, Contactdetaisl(MobileNo))Taxi(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate))
 
-**2NF**\
-Location(Borough, houseNumber, StreetName, Postcode,)
-Client(ClientID, FirstName SecName, phoneNo))
-ClientType(Private,(clientid,charge)Business(clinteid,Businestype,email))
-Contract(ContractID, Jobid, officeId* DateSigned, DateDue, fixedCharge, NoofJobs)
-Driver(DriverID, FirstName, SecName, Gender, licenceN0, treg)
-Job(JobID PickupDate, PickupTime, PickupLocation ,DropoffLocation, Mileage, ReasonIfFailed)
-JobAlloc(JobId,StaffID,DriverID,ClientiD)
-Office(OfficeID, MobileNos, Email, bourogh*,Telephone, Managerid)
-Staff(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
-Taxi(tReg, Capacity, CurrentMileage, DueDate, driverID*)
-Car (tReg, Model, Make, Colour, ownerID*) 
-TaxiOwner(OwnerID, FirstName, SecName, tReg*)
+#### Normalize Form
 
-**3NF**\
-Location(Borough, houseNumber, StreetName, Postcode,)
-Client(ClientID, FirstName SecName, phoneNo))
-ClientType(clientID,Private,(clientid,charge)Business(clinteid,Businestype,email))
-Contract(ContractID, Jobid, staffId*, DateSigned, DateDue, fixedCharge, NoofJobs)
-Driver(DriverID, FirstName, SecName, Gender, licenceN0, treg)
-Job(JobID ReasonIfFailed)
-Pickup(JobID, Date,Time,Location, priomilage)
-Dropoff(JobID, time,Location, Mileage)
-JobAlloc(JobId, StaffID,DriverID,ClientiD)
-Office(OfficeID, MobileNos, Email, bourogh*,Telephone, Managerid)
-Staff(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
-Taxi(tReg,Capacity, CurrentMileage, DueDate, driverID*)
-Car (tReg, Model, Make, Colour, ownerID*) 
-TaxiOwner(OwnerID, FirstName, SecName, tReg*)
+**Location**(Borough, houseNumber, StreetName, Postcode,)
+**Client**(ClientID, ClientType(Private,(charge)Business(Businestype,email)), FirstName SecName, phoneNo))
+**Contract**(ContractID, officeId* DateSigned, DateDue, fixedCharge, NoofJobs)
+**Driver**(DriverID, FirstName, SecName, Gender, licenceNO)
+**Job**(JobID, PickupDate, PickupTime, PickupAddress, DropoffAddress, TotalChargeble, Mileage, ReasonIfFailed)
+**Office**(OfficeID, MobileNos, Email, AddressID*, Telephone, Managerid)
+ **Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
+**Taxi**(tReg, Model, Make, Colour, Capacity, CurrentMileage, DueDate)
+**TaxiOwner**(OwnerID, FirstName, SecName, tReg*)\
+
+#### 2NF
+
+**Location**(Borough, houseNumber, StreetName, Postcode,)
+**Client**(ClientID, FirstName SecName, phoneNo))
+**ClientType**(Private,(clientid,charge)Business(clinteid,Businestype,email))
+**Contract**(ContractID, Jobid, officeId* DateSigned, DateDue, fixedCharge, NoofJobs)
+**Driver**(DriverID, FirstName, SecName, Gender, licenceN0, treg)
+**Job**(JobID PickupDate, PickupTime, PickupLocation ,DropoffLocation, Mileage, ReasonIfFailed)
+**JobAlloc**(JobId,StaffID,DriverID,ClientiD)
+**Office**(OfficeID, MobileNos, Email, bourogh*,Telephone, Managerid)
+**Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
+**Taxi**(tReg, Capacity, CurrentMileage, DueDate, driverID*)
+**Car** (tReg, Model, Make, Colour, ownerID*) 
+**TaxiOwner**(OwnerID, FirstName, SecName, tReg*)
+
+#### 3NF
+
+**Location**(Borough, houseNumber, StreetName, Postcode,)
+**Client**(ClientID, FirstName SecName, phoneNo))
+**ClientType**(clientID,Private,(clientid,charge)Business(clinteid,Businestype,email))
+**Contract**(ContractID, Jobid, staffId*, DateSigned, DateDue, fixedCharge, NoofJobs)
+**Driver**(DriverID, FirstName, SecName, Gender, licenceN0, treg)
+**Job**(JobID ReasonIfFailed)
+**Pickup**(JobID, Date,Time,Location, priomilage)
+**Dropoff**(JobID, time,Location, Mileage)
+**JobAlloc**(JobId, StaffID,DriverID,ClientiD)
+**Office**(OfficeID, MobileNos, Email, bourogh*,Telephone, Managerid)
+**Staff**(StaffNumber, FirstName, SecName, NI, D.O.B, Salary, Gender)
+**Taxi**(tReg,Capacity, CurrentMileage, DueDate, driverID*)
+**Car** (tReg, Model, Make, Colour, ownerID*) 
+**TaxiOwner**(OwnerID, FirstName, SecName, tReg*)
 
 ## Image 
 
