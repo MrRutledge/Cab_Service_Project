@@ -81,7 +81,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 **Car** (tReg, Model, Make, Colour, ownerID*) 
 **TaxiOwner**(OwnerID, FirstName, SecName, tReg*)
 
-## Image 
+### Image 
 
 ![Graph](/Cab_Service_Project/img/Display_1.png)
 
