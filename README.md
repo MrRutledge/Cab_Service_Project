@@ -3,6 +3,8 @@ Cab Service University design project
 
 ![Graph](/Cab_Service_Project/img/grph1.JPG) 
 
+<img img="grph1.JPG" width="800" />
+
 __The Report CabsOnDemand.__
 
 The task was to design a database for a cab company, I researched the project and managed to normalise it to the third form, I designed the E-R diagram and I had to create and display the queries.
@@ -18,6 +20,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 * Managers are part of staff
 * No two offices in the same building
 
+<img img="grph1.JPG" width="800" />
 
 **Conceptual relations.**\
 

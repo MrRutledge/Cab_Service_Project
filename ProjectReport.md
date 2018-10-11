@@ -18,6 +18,8 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 * Managers are part of staff
 * No two offices in the same building
 
+<img img="grph1.JPG" width="800" />
+
 
 **Conceptual relations.**\
 
