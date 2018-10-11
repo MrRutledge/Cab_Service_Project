@@ -1,7 +1,7 @@
 # Cab_Service_Project
 Cab Service University design project
 
-![Graph](/img/grph1.JPG ) 
+![Graph](/img/graph.JPG ) 
 
 __The Report CabsOnDemand.__
 
@@ -85,7 +85,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 
 ### Image 
 
-![Graph](/img/grph2.JPG)
+![Graph](/img/Display_1.JPG)
 
 **Examples of Queries** 
 
