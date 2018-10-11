@@ -1,7 +1,7 @@
 # Cab_Service_Project
 Cab Service University design project
 
-![Graph](/Cab_Service_Project/img/grph1.JPG) 
+![Graph](/img/graph.JPG )
 
 <img img="grph1.JPG" width="800" />
 
@@ -86,7 +86,7 @@ In this course I use the SQL Developer GUI, it was a new software because in the
 
 ### Image 
 
-![Graph](/Cab_Service_Project/img/grph2.JPG)
+![Graph](/img/Display_1.png)
 
 **Examples of Queries** 
 
